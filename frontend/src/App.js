@@ -5,6 +5,8 @@ import GroupsPage from './pages/GroupsPage';
 import FriendsPage from './pages/FriendsPage';
 import ActivityPage from './pages/ActivityPage';
 import AccountPage from './pages/AccountPage';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
 
 function App() {
   return (
