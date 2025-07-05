@@ -20,7 +20,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<GroupsPage />} />
-        <Route path="/groups" element={<GroupsPage />} />
+        <Route path="/groups" element={<PrivateRoute><GroupsPage /></PrivateRoute>} />
         <Route path="/friends" element={<FriendsPage />} />
         <Route path="/activity" element={<ActivityPage />} />
         <Route path="/account" element={<AccountPage />} />

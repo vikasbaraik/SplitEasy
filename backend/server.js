@@ -29,6 +29,16 @@ app.get('/api/protected', protect, (req, res) => {
     res.json({ message: `Welcome ${req.user.name}, you are authorized.` });
 });
 
+app.get('/api/friends', protect, async (req, res) => {
+    try {
+        const users = await User.find({ _id: { $ne: req.user._id } }).select('name email');
+        res.json(users);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
