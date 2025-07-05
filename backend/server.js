@@ -7,6 +7,7 @@ const app = express();
 const { protect } = require('./middlewares/authMiddleware');
 
 const authRoutes = require('./routes/authRoutes');
+const groupRoutes = require('./routes/groupRoutes');
 
 const PORT = process.env.PORT || 5000;
 
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/groups', groupRoutes);
 
 app.get('/api/protected', protect, (req, res) => {
     res.json({ message: `Welcome ${req.user.name}, you are authorized.` });
